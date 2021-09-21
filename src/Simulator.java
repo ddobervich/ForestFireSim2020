@@ -1,5 +1,7 @@
 
 public class Simulator {
+    // TODO: declare your 2d array for the forest
+    // TODO: declare any other attributes you need at the top
 
     /***
      * Create a new simulator.  The simulator creates a new Forest of size (r, c).
@@ -8,7 +10,7 @@ public class Simulator {
      * @param c
      */
     public Simulator(int r, int c) {
-
+        // TODO: initialize all your attributes here!
     }
 
     // TODO: add methods outlines in assignment sheet
