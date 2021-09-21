@@ -2,7 +2,7 @@ import processing.core.*;
 
 public class GUI extends PApplet {
     Simulator sim;
-    DisplayWindow gridDisplay;
+    DisplayWindow display;
 
     public void settings() {
         size(640, 550); // set the size of the screen.
@@ -15,17 +15,21 @@ public class GUI extends PApplet {
         // Create the display
         // parameters: (10,10) is upper left of display
         // (620, 530) is the width and height
-        gridDisplay = new DisplayWindow(this, 10, 10, 620, 530);
+        display = new DisplayWindow(this, 10, 10, 620, 530);
 
-        gridDisplay.setNumCols(sim.getWidth());		// NOTE:  these must match your simulator!!
-        gridDisplay.setNumRows(sim.getHeight());
+        display.setNumCols(sim.getWidth());		// NOTE:  these must match your simulator!!
+        display.setNumRows(sim.getHeight());
 
         // Set different grid values to different colors
         // TODO:  uncomment these lines!
-        // display.setColor(Simulator.ON_FIRE, color(255, 0, 0));
-        // display.setColor(Simulator.ASH, color(180, 180, 180));
-        // display.setColor(Simulator.LIVING, color(0, 0, 255));
-        // display.setColor(Simulator.EMPTY, color(255, 255, 255));
+        // int red = color(255, 0, 0);          // pattern:  color(redAmount, greenAmount, blueAmount)
+        // int grey = color(180, 180, 180);
+        // int green = color(0, 255, 0);
+        // int white = color(255, 255, 255);
+        // display.setColor(1, green);          // 1 displays as green
+        // display.setColor(2, red);            // 2 displays as red
+        // display.setColor(3, grey);           // 3 displays as grey
+        // display.setColor(0, white);          // 0 displays as white
 
     }
 
@@ -35,7 +39,7 @@ public class GUI extends PApplet {
 
         // TODO: have your simulation run one step.
 
-        gridDisplay.drawGrid(sim.getDisplayGrid()); // display the game
+        display.drawGrid(sim.getDisplayGrid()); // display the game
     }
 
     public static void main(String[] args) {
